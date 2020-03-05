@@ -76,4 +76,6 @@ Code from `https://github.com/rafrex/spa-github-pages`
 <BrowserRouter basename={process.env.NODE_ENV === 'production' ? '/test' : '/'}>
 ```
 
+6. Run `npm run deploy`
+
 
