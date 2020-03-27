@@ -39,6 +39,7 @@ src/
   |     |     |-- components
   |     |     |     |-- Auth.jsx
   |     |     |     |-- LoginForm.jsx
+  |     |     |     |--styles.scss
   |     |     |
   |     |     |-- auth.actions.js
   |     |     |-- auth.reduces.js
@@ -50,13 +51,19 @@ src/
   |           |-- componetns
   |           |     |-- TasksList.jsx
   |           |     |-- Task.jsx
+  |           |     |--styles.scss
+  |           |
   |           |-- tasks.actions.js
   |           |-- tasks.reduces.js
   |           |-- tasks.selectors.js
   |           |-- tasks.actionTypes.js
+  |
   |-- styles/
   |     |-- index.scss
-  |     |-- index.scss
+  |     |-- variables.scss
+  |     |-- common.scss
+  |     |-- breakpoints.scss
+  |
   |-- App.jsx
   |-- index.jsx
   |-- store.js
