@@ -60,6 +60,7 @@ src/
   |-- App.jsx
   |-- index.jsx
   |-- store.js
+  |-- index.html
 
 .eslintrc.js
 .babelrc
