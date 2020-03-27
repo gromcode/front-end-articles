@@ -1,12 +1,12 @@
 ## Настройка проекта ##
 1. `gitignore` содержит все необходимые файлы / папки (как минимум `node_modules` и папку с билдом)
-2. `README.md` содержит только необходимую информацию. Есть инструкция для development и production сборки
+2. `README.md` содержит только необходимую информацию. Есть инструкция для development и production сборки. Есть ссылка на рабочай проект
 3. Проект запускается и собирается без ошибок
 4. При работе проекта в консоли нету ошибок
 5. При работе проекта происходят ожидаемые запросы на сервер (в DevTools во вкладке Network все происходит как вы того ожидаете - идут нужные запросы в нужном количестве)
 6. В `package.json` только зависимости, которые используются в проекте
 7. В `package.json` есть `npm` скрипты `start`, `build`, `lint`, `test`
-8. Убедитесь, что работает Gihub Pages, если такая требуется
+8. Убедитесь, что работает Gihub Pages, если такая требуется. SPA задеплоен на Netlify 
 
 ## Codestyle ##
 1. Подключен и настроен `ESLint`
@@ -31,3 +31,39 @@
 4. Если в компоненте нету состояния или методов жизненного цикла - она должна быть функциональной
 5. В JSX минимум логики
 6. Используйте деструктуризацию для `props`
+7. Структура проекта
+```
+src/
+  |-- features/
+  |     |-- auth
+  |     |     |-- components
+  |     |     |     |-- Auth.jsx
+  |     |     |     |-- LoginForm.jsx
+  |     |     |
+  |     |     |-- auth.actions.js
+  |     |     |-- auth.reduces.js
+  |     |     |-- auth.selectors.js
+  |     |     |-- auth.actionTypes.js
+  |     |
+  |     |
+  |     |-- tasks
+  |           |-- componetns
+  |           |     |-- TasksList.jsx
+  |           |     |-- Task.jsx
+  |           |-- tasks.actions.js
+  |           |-- tasks.reduces.js
+  |           |-- tasks.selectors.js
+  |           |-- tasks.actionTypes.js
+  |-- styles/
+  |     |-- index.scss
+  |     |-- index.scss
+  |-- App.jsx
+  |-- index.jsx
+  |-- store.js
+
+.eslintrc.js
+.babelrc
+.gitignore
+package.json
+webpack.config.js
+```
