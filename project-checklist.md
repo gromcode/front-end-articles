@@ -40,7 +40,7 @@ src/
   |     |     |-- components
   |     |     |     |-- Auth.jsx
   |     |     |     |-- LoginForm.jsx
-  |     |     |     |--styles.scss
+  |     |     |     |-- styles.scss
   |     |     |
   |     |     |-- auth.actions.js
   |     |     |-- auth.reduces.js
@@ -52,7 +52,7 @@ src/
   |           |-- componetns
   |           |     |-- TasksList.jsx
   |           |     |-- Task.jsx
-  |           |     |--styles.scss
+  |           |     |-- styles.scss
   |           |
   |           |-- tasks.actions.js
   |           |-- tasks.reduces.js
