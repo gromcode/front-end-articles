@@ -68,7 +68,11 @@ module.exports = {
   // ...
   plugins: [
     // ...
-    new CopyPlugin([{ from: '_redirects', to: '' }]),
+    new CopyPlugin({
+      patterns: [
+        { from: '_redirects', to: '' },
+      ],
+    }),
   ],
 };
 ```

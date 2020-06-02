@@ -9,7 +9,7 @@
 8. Убедитесь, что работает Gihub Pages, если такая требуется. SPA задеплоен на Netlify 
 
 ## Codestyle ##
-1. Подключен и настроен `ESLint`
+1. Подключен и настроен `ESLint`. Используйте `airbnb` пресет
 2. Код отформатирован с помощью `Prettier`
 3. Удален закомментированный и не используемый код
 4. Переменные имеют понятные имена, которые описывают содержимое переменной
@@ -40,7 +40,7 @@ src/
   |     |     |-- components
   |     |     |     |-- Auth.jsx
   |     |     |     |-- LoginForm.jsx
-  |     |     |     |--styles.scss
+  |     |     |     |-- styles.scss
   |     |     |
   |     |     |-- auth.actions.js
   |     |     |-- auth.reduces.js
@@ -52,7 +52,7 @@ src/
   |           |-- componetns
   |           |     |-- TasksList.jsx
   |           |     |-- Task.jsx
-  |           |     |--styles.scss
+  |           |     |-- styles.scss
   |           |
   |           |-- tasks.actions.js
   |           |-- tasks.reduces.js
