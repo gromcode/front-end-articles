@@ -7,7 +7,6 @@
 styles/
   |-- index.scss
   |-- variables.scss
-  |-- common.scss
   |-- breakpoints.scss
   |-- ...
 .prettierrc
@@ -44,5 +43,8 @@ styles/
    9. Избегаем больше 8-10 стилей на 1 элемент
    10. Избегаем overriding стилей элемента
    11. Нет дублирования кода
-       https://github.com/airbnb/css#selectors
-       https://github.com/HugoGiraudel/sass-boilerplate
+
+## Style guide
+
+1. https://github.com/airbnb/css#selectors
+2. https://github.com/HugoGiraudel/sass-boilerplate
