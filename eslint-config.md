@@ -4,21 +4,13 @@
 
 3. Вызови команду `npm init -y`. Эта команда создаст файл `package.json`
 
-4. Дальше установи необходимые пакеты командой `npm install eslint@7.32.0 @babel/eslint-parser eslint-config-airbnb-base eslint-config-prettier eslint-plugin-babel eslint-plugin-prettier prettier`
+4. Дальше установи необходимые пакеты командой `npm install eslint@7.32.0 eslint-config-airbnb-base eslint-config-prettier eslint-plugin-prettier prettier`
 
 5. Добавь файл с названием `.eslintrc.js` в корневую папку проекта с содержимым - это конфиг ESLint
 
 ```
 module.exports = {
   extends: ['airbnb-base', 'plugin:prettier/recommended'],
-  parser: '@babel/eslint-parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2021,
-    sourceType: 'module',
-  },
   env: {
     es6: true,
     jest: true,
