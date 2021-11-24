@@ -4,7 +4,7 @@
 
 3. Вызови команду `npm init -y`. Эта команда создаст файл `package.json`
 
-4. Дальше установи необходимые пакеты командой `npm install eslint@7.32.0 eslint-config-airbnb-base eslint-plugin-import eslint-config-prettier eslint-plugin-prettier prettier`
+4. Дальше установи необходимые пакеты командой `npm install eslint eslint-config-airbnb-base eslint-plugin-import eslint-config-prettier eslint-plugin-prettier prettier`
 
 5. Добавь файл с названием `.eslintrc.js` в корневую папку проекта с содержимым - это конфиг ESLint
 
@@ -17,7 +17,6 @@ module.exports = {
     browser: true,
   },
   rules: {
-    strict: 0,
     'no-alert': 0,
     'no-console': 0,
     'no-constant-condition': 0,
