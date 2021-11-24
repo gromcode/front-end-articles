@@ -4,32 +4,32 @@
 
 3. Вызови команду `npm init -y`. Эта команда создаст файл `package.json`
 
-4. Дальше установи необходимые пакеты командой `npm install eslint babel-eslint eslint-config-airbnb-base eslint-config-prettier eslint-plugin-import`
+4. Дальше установи необходимые пакеты командой `npm install eslint eslint-config-airbnb-base eslint-plugin-import eslint-config-prettier eslint-plugin-prettier prettier`
 
 5. Добавь файл с названием `.eslintrc.js` в корневую папку проекта с содержимым - это конфиг ESLint
 
 ```
 module.exports = {
-  extends: ['airbnb-base', 'prettier'],
-  parser: 'babel-eslint',
+  extends: ['airbnb-base', 'plugin:prettier/recommended'],
   env: {
     es6: true,
     jest: true,
     browser: true,
   },
   rules: {
-    'no-console': 0,
     'no-alert': 0,
+    'no-console': 0,
+    'no-constant-condition': 0,
+    'no-shadow': 0,
+    'no-restricted-globals': 0,
+    'no-unused-vars': 0,
+    'no-underscore-dangle': 0,
+    'func-names': 0,
+    'global-require': 0,
+    'import/extensions': 0,
+    'import/no-dynamic-require': 0,
     'import/prefer-default-export': 0,
     'prefer-template': 0,
-    'import/extensions': 0,
-    'no-unused-vars': 0,
-    'import/no-dynamic-require': 0,
-    'global-require': 0,
-    'no-constant-condition': 0,
-    'no-restricted-globals': 0,
-    'func-names': 0,
-    'no-underscore-dangle': 0,
   },
 };
 ```
