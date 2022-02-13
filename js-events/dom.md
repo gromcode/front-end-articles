@@ -86,7 +86,7 @@
     <li><code>element.classList.add('class-name')</code> - добавит элементу класс с именем <code>class-name</code></li>
     <li><code>element.classList.remove('class-name')</code> - удалит у элемента класс с именем <code>class-name</code></li>
     <li><code>element.classList.toggle('class-name')</code> - удалит у элемента класс с именем <code>class-name</code>, если такой уже есть. Или добавит, если у элемента такого класса нету</li>
-    <li><code>element.classList.containes('class-name')</code> - вернет <code>true</code> если у элемента есть класс <code>class-name</code> или <code>false</code>, если у элемента такого класса нету</li>
+    <li><code>element.classList.contains('class-name')</code> - вернет <code>true</code> если у элемента есть класс <code>class-name</code> или <code>false</code>, если у элемента такого класса нету</li>
   </ul>
 </p>
 
