@@ -1,19 +1,10 @@
-## Layout project - quality rules
+## Layout project - checklist
 
-
-#### General
-  1. [Project repository](#project-repository)
+  1. [GitHub repository](#github-repository)
   1. [Project description (README.md)](#project-description)
   1. [Prettier](#prettier)
 
-#### HTML
-  1. [HTML formating](#types)
-
-#### CSS
-  1. [-](#types)
-
-
-## Project repository
+## GitHub repository
 
   <a name="project-repository--description"></a><a name="1.1"></a>
   - [1.1](#project-repository--description) **Description**: The name of the repository where the project is located should match the project, all folders should be properly structured, and unnecessary files need to be removed from the repository.
@@ -26,7 +17,7 @@
     person/second-project123  => ---
     person/html-css-task-26  => ---
 
-    person/Price-cards-layout => +++
+    person/price-cards-layout => +++
     person/price-cards => +++
     ```
       - Correct structure example:
@@ -47,10 +38,11 @@
     ```
     .vscode
     .DS_Store
+    _redirects
     /dist
     ```
 
-**[⬆ back to top](#layout-project---quality-rules)**
+**[⬆ back to top](#layout-project---checklist)**
 
 ## Project description
 
@@ -85,7 +77,7 @@
     - Some Name
     ```
 
-**[⬆ back to top](#layout-project---quality-rules)**
+**[⬆ back to top](#layout-project---checklist)**
 
 
 ## Prettier
@@ -107,4 +99,4 @@
     }
     ```
 
-**[⬆ back to top](#layout-project---quality-rules)**
+**[⬆ back to top](#layout-project---checklist)**
