@@ -2,7 +2,7 @@
 
 #### Global
   1. [Semantics](#semantics)
-  1. [Naming](#naming)
+  1. [Naming & syntax](#naming--syntax)
   1. [BEM (.html)](#bem-html)
   1. [BEM (.scss)](#bem-scss)
   1. [Breakpoints](#breakpoints)
@@ -10,7 +10,11 @@
   1. [Styles order](#styles-order)
 
 #### Code styles
-  1. [HTML formating](#types)
+  1. [In progress...](#types)
+
+#### Best Practices
+  1. [Preprocessor features](#preprocessor-features)
+
 
 ## Semantics
 
@@ -92,16 +96,25 @@
 
 **[⬆ back to top](#html--css---quality-rules)**
 
-## Naming
 
-  <a name="bem-html--2.1"></a><a name="2.1"></a>
-  - [2.1](#bem-html--2.1) Choose class names for elements carefully, the name should clearly reflect the content or functionality of the element.
+## Naming & syntax
 
-  <a name="bem-html--2.2"></a><a name="2.2"></a>
-  - [2.2](#bem-html--2.2) This also applies to file names.
+  <a name="naming--syntax--2.1"></a><a name="2.1"></a>
+  - [2.1](#naming--syntax--2.1) Choose class names for elements carefully, the name should clearly reflect the content or functionality of the element, this also applies to file names.
+
+  <a name="naming--syntax--2.2"></a><a name="2.2"></a>
+  - [2.2](#naming--syntax--2.2) Keep classes lowercase and use dashes (not underscores or camelCase). Dashes serve as natural breaks in related class (e.g., `.btn` and `.btn-danger`).
+
+  <a name="naming--syntax--2.3"></a><a name="2.3"></a>
+  - [2.3](#naming--syntax--2.3) Avoid excessive and arbitrary shorthand notation. `.btn` is useful for button, but `.s` doesn’t mean anything ([more details](https://codeguide.co/#class-names)).
+
+  <a name="naming--syntax--2.4"></a><a name="2.4"></a>
+  - [2.4](#naming--syntax--2.4) Don’t capitalize html tags, including the doctype.
+
+  <a name="naming--syntax--2.5"></a><a name="2.5"></a>
+  - [2.5](#naming--syntax--2.5) Always use double quotes, never single quotes, on attributes ([more details](https://codeguide.co/#html-syntax)).
 
 **[⬆ back to top](#html--css---quality-rules)**
-
 
 
 ## BEM (.html)
@@ -218,6 +231,7 @@
 
 **[⬆ back to top](#html--css---quality-rules)**
 
+
 ## BEM (.scss)
 
   <a name="bem-scss--4.1"></a><a name="4.1"></a>
@@ -237,19 +251,42 @@
     ```
     ```scss
     .price-card {
+      // ...
+
       &__title {
-        &_primary {...}
+        // ...
+
+        &_primary {
+          // ...
+        }
       }
-      &__subtitle {...}
+
+      &__subtitle {
+        // ...
+      }
+
       &__price {
-        &_new {...}
+        // ...
+
+        &_new {
+          // ...
+        }
       }
-      &__description {...}
+      &__description {
+        // ...
+      }
     }
 
     .sale-decoration {
-      &__subtitle {...}
-      &__title {...}
+      // ...
+
+      &__subtitle {
+        // ...
+      }
+
+      &__title {
+        // ...
+      }
     }
     ```
     
@@ -260,40 +297,40 @@
     // Incorrect //
     .header {
       color: $main-text-color;
-      ...
+      // ...
       .menu {
         display: flex;
-        ...
+        // ...
         .navigation {
           display: flex;
-          ...
+          // ...
         }
       }
       .headline {
         width: 826px;
-        ...
+        // ...
       }
     }
     
     // Correct //
     .header {
       color: $main-text-color;
-      ...
+      // ...
     }
     
     .menu {
       display: flex;
-      ...
+      // ...
     }      
    
     .navigation {
       display: flex;
-      ...
+      // ...
     }
     
     .headline {
       width: 826px;
-      ...
+      // ...
     }
     ```
   <a name="bem-scss--4.3"></a><a name="4.3"></a>
@@ -370,20 +407,30 @@
     ```scss
     // Incorrect //
     .review {
-      ...
-      &__message {...}
+      &__message {
+        // ...
+      }
       &__worker {
-        ...
-        &-avatar {...} // ===> X
+        // ...
+        &-avatar {    // ===> X
+          // ...
+        } 
       }
     }
 
     // Correct //
     .review {
-      ...
-      &__message {...}
-      &__worker {...}
-      &__worker-avatar {...}
+      &__message {
+        // ...
+      }
+
+      &__worker {
+        // ...
+      }
+
+      &__worker-avatar {
+        // ...
+      }
     }
     ```
   <a name="bem-scss--4.5"></a><a name="4.5"></a>
@@ -409,18 +456,76 @@
     }
     ```
   <a name="bem-scss--4.6"></a><a name="4.6"></a>
-  - [4.6](#bem-scss--4.6) Don't use too many [BEM modifiers](https://ru.bem.info/methodology/quick-start/#%D0%BC%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80), only use them when necessary:
-
-    ```scss
-    // In progress...
-    ```
+  - [4.6](#bem-scss--4.6) Don't use too many [BEM modifiers](https://ru.bem.info/methodology/quick-start/#%D0%BC%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80), only use them when necessary.
 
 **[⬆ back to top](#html--css---quality-rules)**
 
 ## Breakpoints
 
   <a name="breakpoints--5.1"></a><a name="5.1"></a>
-  - [5.1](#breakpoints--5.1) Use mixins for breakpoints and place them in a separate file - 'breakpoints.scss'.
+  - [5.1](#breakpoints--5.1) Place media queries as close to their selectors whenever possible. Don’t bundle them all in a separate stylesheet or at the end of the document.
+
+    ```scss
+    // Media query mixin example:
+    @mixin for-large-up {
+      @media screen and (min-width: 1400px) {
+        @content;
+      }
+    }
+
+    // Incorrect
+    .inbox {
+      // ...
+
+      &__title {
+        // ...
+      }
+
+      &__subtitle {
+        // ...
+      }
+    }
+
+    // Media query/mixin at the end of the document => X
+    @include for-large-up {
+      .inbox {
+        // ...
+
+        &__title {
+          // ...
+        }
+
+        &__subtitle {
+          // ...
+        }
+      }
+    }
+
+    // Correct
+    .inbox {
+      // ...
+
+      @include for-large-up {
+        // ...
+      }
+
+      &__title {
+        // ...
+
+        @include for-large-up {
+          // ...
+        }
+      }
+
+      &__subtitle {
+        // ...
+
+        @include for-large-up {
+          // ...
+        }
+      }
+    }
+    ```
 
   <a name="breakpoints--5.2"></a><a name="5.2"></a>
   - [5.2](#breakpoints--5.2) Don't create unnecessary breakpoints for styling, only use the 2-3 primary ones (for mobile/tablet/desktop versions):
@@ -449,11 +554,7 @@
     ```
 
   <a name="breakpoints--5.3"></a><a name="5.3"></a>
-  - [5.3](#breakpoints--5.3) Don't forget to follow the ['mobile-first'](https://www.uxpin.com/studio/blog/a-hands-on-guide-to-mobile-first-design/) approach:
-
-    ```scss
-    // In progress
-    ```
+  - [5.3](#breakpoints--5.3) Don't forget to follow the ['mobile-first'](https://www.uxpin.com/studio/blog/a-hands-on-guide-to-mobile-first-design/) approach.
 
 **[⬆ back to top](#html--css---quality-rules)**
 
@@ -510,22 +611,59 @@
     ```
 
   <a name="bem-html--7.2"></a><a name="7.2"></a>
-  - [7.2](#bem-html--7.2) Sort properties in selectors. It significantly improves code readability
+  - [7.2](#bem-html--7.2) Property declarations should be grouped together in the following order: 
+    - Positioning
+    - Box model
+    - Typographic
+    - Visual
+    - Misc
+
+    It significantly improves code readability ([more details](https://codeguide.co/#declaration-order))
 
     ```scss
-    .sale-decoration {
-      position: absolute;  // 
-      top: 25px;           // ----> position properties
-      rigth: 25px;         // 
-      display: flex;               //
-      justify-content: center;     //  ----> flex properties
-      gap: 10px;                   //
-      background-color: #f252265;      //
-      border: 3px solid #fff;          // ----> decorating properties
-      border-radius: 10px;             //
-      padding: 10px 20px;                   //
-      margin: 0;                            // ----> padding/margin
+    .declaration-order {
+      // Positioning
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+
+      // Box model
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+
+      // Typography
+      font: normal 14px "Helvetica Neue", sans-serif;
+      line-height: 1.5;
+      color: #333;
+      text-align: center;
+      text-decoration: underline;
+
+      // Visual
+      background-color: #f5f5f5;
+      border: 1px solid #e5e5e5;
+      border-radius: 3px;
+
+      // Misc
+      opacity: 1;
     }
     ```
 
 **[⬆ back to top](#html--css---quality-rules)**
+
+
+# Best Practices
+
+## Preprocessor features
+
+  <a name="preprocessor-features--1.1"></a><a name="1.1"></a>
+  - [1.1](#preprocessor-features--1.1) Use mixins for breakpoints and place them in a separate file - 'breakpoints.scss'.
+
+  <a name="preprocessor-features--1.1"></a><a name="1.1"></a>
+  - [1.2](#preprocessor-features--1.1) In progress...
